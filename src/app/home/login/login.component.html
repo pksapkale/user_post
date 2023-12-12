@@ -1,0 +1,24 @@
+<div class="container-fluid">
+  <div class="row justify-content-center align-items-center" style="height: 100vh;">
+    <div class="col-md-6 col-lg-4">
+      <form #login="ngForm" (ngSubmit)="loginSubmitHandler(login)" class="p-4 shadow rounded bg-light">
+        <h2 class="mb-4 text-center">Login</h2>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email" class="form-control" name="user_email" ngModel #email="ngModel" id="exampleInputEmail1" aria-describedby="emailHelp" [pattern]="email_pattern" required />
+          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" class="form-control" name="password" ngModel #password="ngModel" id="exampleInputPassword1" required />
+        </div>
+        <div class="mb-3 text-center">
+          <a (click)="jumpToPage('register')" class="cursor">Do not have any account?</a>
+        </div>
+        <div class="d-grid gap-2">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
